@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChronosArena | Portafolio digital</title>
+<style>
+:root{--bg:#0b1020;--panel:#141c30;--panel2:#1a2540;--ink:#eef3ff;--muted:#aab7d3;--accent:#79e0d0;--gold:#f0c674;--line:#2a3857}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0%,#1b3150 0,transparent 32%),var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{padding:26px max(22px,calc((100% - 1120px)/2));border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:#0b1020dd;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.brand{font-weight:800;letter-spacing:.08em}.brand span{color:var(--accent)}nav{display:flex;gap:14px;flex-wrap:wrap}nav a{color:var(--muted);text-decoration:none;font-size:.9rem}nav a:hover{color:var(--accent)}
+main{max-width:1120px;margin:auto;padding:28px 22px 70px}.hero{min-height:360px;display:grid;grid-template-columns:1.3fr .7fr;gap:26px;align-items:center;padding:42px 0}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:700}.hero h1{font-size:clamp(2.6rem,6vw,5.4rem);line-height:1.02;margin:.3em 0}.hero p{max-width:680px;color:var(--muted);font-size:1.1rem}.sigil{border:1px solid #3a526f;border-radius:28px;min-height:250px;display:grid;place-items:center;background:linear-gradient(145deg,#1b2a45,#10182b);position:relative;overflow:hidden}.sigil:before,.sigil:after{content:"";position:absolute;border:1px solid #79e0d044;border-radius:50%;width:230px;height:230px}.sigil:after{width:160px;height:160px}.sigil b{font-size:5rem;color:var(--gold);z-index:1;text-shadow:0 0 30px #f0c67455}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{border:1px solid var(--line);background:var(--panel2);color:var(--ink);padding:10px 15px;border-radius:12px;cursor:pointer;font-weight:650}.btn.primary{background:var(--accent);color:#0b1823;border-color:var(--accent)}.btn:hover{filter:brightness(1.08)}
+.notice{border:1px solid #6b5932;background:#2b2418;color:#f4dca5;padding:12px 15px;border-radius:12px;font-size:.9rem;margin:8px 0 30px}
+section{scroll-margin-top:100px;margin:40px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}.section-head h2{font-size:clamp(1.6rem,3vw,2.3rem);margin:0}.section-head p{color:var(--muted);margin:4px 0 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:linear-gradient(160deg,var(--panel),#101729);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}.card h3{margin:.25em 0 .5em;font-size:1.12rem}.card p,.card li{color:var(--muted)}.number{color:var(--accent);font-weight:800;font-size:.8rem;letter-spacing:.12em}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.step{border-top:3px solid var(--accent);padding:16px;background:var(--panel);border-radius:0 0 14px 14px}.step:nth-child(2){border-color:var(--gold)}.step:nth-child(3){border-color:#a99cff}
+ul{padding-left:20px}.tag{display:inline-block;border:1px solid #38546a;color:var(--accent);padding:3px 8px;border-radius:999px;font-size:.78rem;margin:3px 4px 3px 0}
+.editable[contenteditable="true"]{outline:2px dashed var(--accent);outline-offset:4px;border-radius:4px;background:#79e0d00a}.edit-hint{color:var(--muted);font-size:.85rem}
+.evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.evidence{min-height:155px;border:1px dashed #4a5b7d;border-radius:15px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;background:#111a2b}.evidence strong{color:var(--gold)}.evidence input{width:100%;color:var(--muted);font-size:.8rem;background:#0b1020;border:1px solid var(--line);border-radius:7px;padding:8px}
+table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--accent);font-size:.85rem}td{color:var(--muted)}td[contenteditable="true"]{min-width:100px}
+.quote{border-left:3px solid var(--gold);padding:8px 0 8px 18px;color:#e9dfc5;font-size:1.1rem}
+footer{border-top:1px solid var(--line);padding:25px 22px;color:var(--muted);text-align:center}
+.small{font-size:.88rem;color:var(--muted)}.hidden{display:none!important}
+@media(max-width:760px){header{position:static}.hero{grid-template-columns:1fr;padding-top:25px}.sigil{min-height:170px}.grid,.timeline,.evidence-grid,.two{grid-template-columns:1fr}.section-head{align-items:start}main{padding-top:14px}nav{gap:10px}}
+@media print{body{background:white;color:#111}header,.actions,.notice,.edit-hint,.no-print{display:none!important}main{max-width:none;padding:0}.hero{min-height:0}.card,.step,.evidence,.sigil{background:white;color:#111;border:1px solid #aaa;break-inside:avoid}.card p,.card li,.hero p,.small,td{color:#333}section{margin:22px 0}.editable[contenteditable="true"]{outline:none}.sigil b{color:#333}}
+
+.editor-panel{position:fixed;right:14px;bottom:14px;z-index:50;width:min(330px,calc(100vw - 28px));background:#101a2d;border:1px solid #45607d;border-radius:16px;padding:13px;box-shadow:0 12px 40px #0009;color:#eef3ff}
+.editor-panel h3{margin:0 0 6px}.editor-panel p{font-size:12px;color:#aab7d3}.editor-tools{display:grid;grid-template-columns:1fr 1fr;gap:6px}.editor-tools .btn{font-size:12px;padding:8px}.editor-tools .wide{grid-column:1/-1}
+body.layout-edit [data-block]{outline:2px dashed #79e0d0;outline-offset:3px;cursor:pointer}body.layout-edit .selected-block{outline:3px solid #f0c674}
+.uploadable-image{width:100%;max-height:300px;object-fit:cover;border-radius:12px;margin:8px 0}
+@media print{.editor-panel{display:none!important}}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">CHRONOS<span>ARENA</span></div>
+  <nav>
+    <a href="#presentacion">Presentación</a><a href="#desarrollo">Desarrollo</a><a href="#evidencias">Evidencias</a><a href="#competencias">Competencias</a><a href="#antropologia">Antropología</a><a href="#interaccion">Interacción</a>
+  </nav>
+</header>
+<main>
+  <div class="hero" id="presentacion">
+    <div>
+      <div class="eyebrow">Portafolio digital · Proyecto académico</div>
+      <h1 class="editable" data-edit>ChronosArena</h1>
+      <p class="editable" data-edit>Este portafolio reúne la idea, el proceso de desarrollo y los aprendizajes obtenidos durante la creación de ChronosArena. Su objetivo es documentar el proyecto y reflexionar sobre las decisiones, la interacción y el comportamiento humano que aparecen en la experiencia de juego.</p>
+      <div class="actions no-print">
+        <button class="btn primary" onclick="toggleEdit()">✎ Activar edición</button>
+        <button class="btn" onclick="window.print()">Imprimir / guardar PDF</button>
+        <button class="btn" onclick="exportData()">Exportar contenido</button>
+        <label class="btn" for="importFile">Importar contenido</label><input id="importFile" class="hidden" type="file" accept=".json,application/json" onchange="importData(event)">
+      </div>
+      <p class="edit-hint">Puedes editar los textos, las celdas de la tabla y los espacios de evidencias. Usa “Activar edición” y luego guarda tus cambios.</p>
+    </div>
+    <div class="sigil" aria-label="Emblema decorativo"><b>⌛</b></div>
+  </div>
+  <div class="notice"><strong>Nota:</strong> algunos datos del proyecto están redactados como una base editable porque deben confirmarse con la experiencia real del equipo. Sustituye los ejemplos por información comprobada, capturas auténticas y fechas reales.</div>
+
+  <section>
+    <div class="section-head"><div><div class="eyebrow">01 · Idea central</div><h2>¿De qué trata el proyecto?</h2><p>Descripción general y propósito.</p></div></div>
+    <div class="two">
+      <article class="card"><h3>Descripción</h3><p class="editable" data-edit>ChronosArena es un proyecto de videojuego desarrollado como aplicación de escritorio en C#. Por la estructura del programa, incluye una pantalla principal, una selección de mazo o personajes y un espacio de arena donde se gestiona la batalla. Esta descripción se debe ajustar a las mecánicas definitivas implementadas.</p></article>
+      <article class="card"><h3>Objetivo del proyecto</h3><p class="editable" data-edit>Construir una experiencia de juego funcional y organizar su lógica mediante clases, formularios y componentes de programación. El portafolio documenta tanto el resultado técnico como las habilidades y reflexiones que surgieron durante su creación.</p></article>
+    </div>
+    <div class="card" style="margin-top:15px"><h3>Ficha técnica</h3>
+      <div class="grid">
+        <div><span class="small">Nombre</span><p class="editable" data-edit><strong>ChronosArena</strong></p></div>
+        <div><span class="small">Tecnología identificada en los archivos</span><p class="editable" data-edit><strong>C# / Windows Forms</strong></p></div>
+        <div><span class="small">Integrantes / autoría</span><p class="editable" data-edit>[Escribe los nombres]</p></div>
+        <div><span class="small">Curso / asignatura</span><p class="editable" data-edit>[Nombre de la asignatura]</p></div>
+        <div><span class="small">Docente</span><p class="editable" data-edit>[Nombre del docente]</p></div>
+        <div><span class="small">Fecha de entrega</span><p class="editable" data-edit>[Día / mes / año]</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="desarrollo">
+    <div class="section-head"><div><div class="eyebrow">02 · Proceso</div><h2>Desarrollo del proyecto</h2><p>Organiza el trabajo en tres momentos principales.</p></div></div>
+    <div class="timeline">
+      <article class="step"><div class="number">ETAPA 01</div><h3 class="editable" data-edit>Inicio y planificación</h3><p class="editable" data-edit>Se definió la idea del juego, su propósito y las funciones principales. En esta fase se planificaron las pantallas, las clases necesarias y la forma en que el jugador participaría en la arena.</p><ul><li class="editable" data-edit>Definición de la idea y las reglas.</li><li class="editable" data-edit>Diseño inicial de la interfaz.</li><li class="editable" data-edit>Distribución de tareas.</li></ul></article>
+      <article class="step"><div class="number">ETAPA 02</div><h3 class="editable" data-edit>Desarrollo y pruebas</h3><p class="editable" data-edit>Se programaron los formularios y la lógica del juego. Los archivos del proyecto incluyen componentes para la arena, selección de mazo, gestión de batalla y definición de personajes.</p><ul><li class="editable" data-edit>Programación de clases y formularios.</li><li class="editable" data-edit>Integración de la lógica de batalla.</li><li class="editable" data-edit>Pruebas y corrección de errores.</li></ul></article>
+      <article class="step"><div class="number">ETAPA 03</div><h3 class="editable" data-edit>Cierre y evaluación</h3><p class="editable" data-edit>Se revisó el funcionamiento general, se recopilaron evidencias y se identificaron mejoras futuras. Completa esta sección con las pruebas que realmente se hicieron y el estado final del juego.</p><ul><li class="editable" data-edit>Verificación de funciones.</li><li class="editable" data-edit>Registro de resultados.</li><li class="editable" data-edit>Reflexión sobre lo aprendido.</li></ul></article>
+    </div>
+    <div class="card" style="margin-top:15px"><h3>Componentes del programa identificados</h3>
+      <span class="tag">MainForm</span><span class="tag">FormSeleccionMazo</span><span class="tag">FormArena</span><span class="tag">GestorBatalla</span><span class="tag">Personaje</span><span class="tag">ClasesHijas</span><span class="tag">ConexionBD</span>
+      <p class="small editable" data-edit>Estos nombres aparecen en la estructura del proyecto compartido. Describe aquí qué responsabilidad cumple cada clase y confirma cuáles funciones están completas en la versión final.</p>
+    </div>
+  </section>
+
+  <section id="evidencias">
+    <div class="section-head"><div><div class="eyebrow">03 · Registro</div><h2>Evidencias y cronograma</h2><p>Agrega capturas reales, fragmentos de código y fechas.</p></div></div>
+    <p class="edit-hint">Los recuadros son espacios de planificación: pega aquí la descripción o el enlace local de cada evidencia. Para incluir imágenes en la versión final, puedes editar el HTML o reemplazar los recuadros por las capturas del proyecto.</p>
+    <div class="evidence-grid">
+      <div class="evidence"><div><strong>01 · Interfaz inicial</strong><p class="editable" data-edit>Captura de la pantalla principal de ChronosArena.</p></div><input aria-label="Referencia de evidencia 1" placeholder="Nombre del archivo o nota (opcional)"></div>
+      <div class="evidence"><div><strong>02 · Selección de mazo</strong><p class="editable" data-edit>Captura de la selección de personajes o mazo.</p></div><input aria-label="Referencia de evidencia 2" placeholder="Nombre del archivo o nota (opcional)"></div>
+      <div class="evidence"><div><strong>03 · Arena de batalla</strong><p class="editable" data-edit>Captura de una partida en funcionamiento.</p></div><input aria-label="Referencia de evidencia 3" placeholder="Nombre del archivo o nota (opcional)"></div>
+      <div class="evidence"><div><strong>04 · Código fuente</strong><p class="editable" data-edit>Fragmento de código explicado: clase, método y función.</p></div><input aria-label="Referencia de evidencia 4" placeholder="Archivo .cs y método"></div>
+      <div class="evidence"><div><strong>05 · Pruebas</strong><p class="editable" data-edit>Resultado de una prueba funcional y un error corregido.</p></div><input aria-label="Referencia de evidencia 5" placeholder="Nombre del archivo o nota (opcional)"></div>
+      <div class="evidence"><div><strong>06 · Registro final</strong><p class="editable" data-edit>Bitácora de batalla o estadísticas generadas por el juego.</p></div><input aria-label="Referencia de evidencia 6" placeholder="Archivo o resultado"></div>
+    </div>
+    <div class="card" style="margin-top:18px"><h3>Cronograma de trabajo</h3><p class="small">Edita las actividades y las fechas según el proceso real.</p>
+      <table id="schedule"><thead><tr><th>Fase</th><th>Actividad</th><th>Fecha / duración</th><th>Estado</th></tr></thead><tbody>
+      <tr><td contenteditable="true">Inicio</td><td contenteditable="true">Idea, reglas y planificación</td><td contenteditable="true">[Fecha]</td><td contenteditable="true">[Pendiente / completado]</td></tr>
+      <tr><td contenteditable="true">Desarrollo</td><td contenteditable="true">Programación de interfaz y mecánicas</td><td contenteditable="true">[Fecha]</td><td contenteditable="true">[Pendiente / completado]</td></tr>
+      <tr><td contenteditable="true">Pruebas</td><td contenteditable="true">Validación y corrección de errores</td><td contenteditable="true">[Fecha]</td><td contenteditable="true">[Pendiente / completado]</td></tr>
+      <tr><td contenteditable="true">Cierre</td><td contenteditable="true">Evidencias, evaluación y presentación</td><td contenteditable="true">[Fecha]</td><td contenteditable="true">[Pendiente / completado]</td></tr>
+      </tbody></table>
+      <div class="actions no-print"><button class="btn" onclick="addRow()">+ Agregar actividad</button></div>
+    </div>
+  </section>
+
+  <section id="competencias">
+    <div class="section-head"><div><div class="eyebrow">04 · Aprendizajes</div><h2>Marco de competencias</h2><p>¿Para qué me ha servido este proyecto?</p></div></div>
+    <div class="grid">
+      <article class="card"><div class="number">COMPETENCIA 01</div><h3 class="editable" data-edit>Pensamiento lógico</h3><p class="editable" data-edit>Convertir reglas del juego en instrucciones claras, organizar condiciones y anticipar posibles resultados de una batalla.</p></article>
+      <article class="card"><div class="number">COMPETENCIA 02</div><h3 class="editable" data-edit>Programación y resolución de problemas</h3><p class="editable" data-edit>Separar responsabilidades en clases, conectar formularios, localizar errores y comprobar que las funciones trabajen en conjunto.</p></article>
+      <article class="card"><div class="number">COMPETENCIA 03</div><h3 class="editable" data-edit>Creatividad y diseño</h3><p class="editable" data-edit>Proponer personajes, reglas y una experiencia que resulte comprensible y atractiva para quien juega.</p></article>
+      <article class="card"><div class="number">COMPETENCIA 04</div><h3 class="editable" data-edit>Comunicación y colaboración</h3><p class="editable" data-edit>Explicar decisiones técnicas, compartir avances y coordinar las tareas del proyecto. Ajusta este punto si trabajaste individualmente.</p></article>
+      <article class="card"><div class="number">COMPETENCIA 05</div><h3 class="editable" data-edit>Evaluación crítica</h3><p class="editable" data-edit>Reconocer qué funciona, qué debe mejorarse y cómo las decisiones de diseño afectan la experiencia de los usuarios.</p></article>
+      <article class="card"><div class="number">COMPETENCIA 06</div><h3 class="editable" data-edit>Autonomía y aprendizaje</h3><p class="editable" data-edit>Investigar soluciones, probar alternativas y aprender de los errores que aparecen durante el desarrollo.</p></article>
+    </div>
+  </section>
+
+  <section id="antropologia">
+    <div class="section-head"><div><div class="eyebrow">05 · Mirada antropológica</div><h2>El lado humano del juego</h2><p>El videojuego también permite reflexionar sobre cómo pensamos, decidimos e interactuamos.</p></div></div>
+    <div class="two">
+      <article class="card"><h3>Decisiones y estrategia</h3><p class="editable" data-edit>En un juego de arena, cada decisión puede implicar anticipar consecuencias, elegir entre opciones y adaptarse a una situación cambiante. Estas acciones permiten observar cómo las personas usan la planificación, la experiencia y la tolerancia a la incertidumbre.</p></article>
+      <article class="card"><h3>Reglas, competencia y convivencia</h3><p class="editable" data-edit>Las reglas establecen límites compartidos y hacen posible que una partida tenga sentido. La competencia puede motivar a mejorar, pero también invita a pensar en el respeto, la justicia, la frustración y la manera de afrontar una derrota.</p></article>
+      <article class="card"><h3>Identidad y elección</h3><p class="editable" data-edit>La selección de personajes o mazos puede expresar preferencias y estilos de juego. La elección no define por completo a una persona, pero sí ofrece una oportunidad para reflexionar sobre cómo construimos estrategias y expresamos gustos dentro de un entorno virtual.</p></article>
+      <article class="card"><h3>Experiencia digital</h3><p class="editable" data-edit>ChronosArena es un entorno diseñado mediante código, pero la experiencia depende de quien lo utiliza: cómo interpreta la interfaz, comprende las reglas y atribuye significado a cada resultado. Esta relación entre tecnología y comportamiento constituye el punto de partida de la mirada antropológica.</p></article>
+    </div>
+    <p class="quote editable" data-edit>“Un juego no es solamente un conjunto de reglas: también es una experiencia humana donde aparecen decisiones, emociones, aprendizajes y formas de relacionarnos”.</p>
+    <p class="small editable" data-edit>Reflexión personal: [Escribe qué observaste en ti o en otros jugadores al probar el juego y qué aprendiste de esa experiencia.]</p>
+  </section>
+
+  <section id="interaccion">
+    <div class="section-head"><div><div class="eyebrow">06 · Experiencia</div><h2>Interacción y vida cotidiana</h2><p>Relaciona las mecánicas del juego con situaciones que vivimos fuera de la pantalla.</p></div></div>
+    <div class="grid">
+      <article class="card"><h3>Planificar antes de actuar</h3><p class="editable" data-edit>Elegir un mazo o decidir un movimiento se puede comparar con organizar recursos y pensar en las consecuencias antes de tomar una decisión cotidiana.</p></article>
+      <article class="card"><h3>Aprender del error</h3><p class="editable" data-edit>Perder una batalla o detectar un fallo en el programa permite revisar lo ocurrido, cambiar de estrategia y volver a intentarlo. El error puede ser una fuente de aprendizaje.</p></article>
+      <article class="card"><h3>Normas y responsabilidad</h3><p class="editable" data-edit>Respetar las reglas del juego se relaciona con la necesidad de acuerdos para convivir. Las reglas claras ayudan a que la experiencia sea más justa y comprensible.</p></article>
+    </div>
+    <div class="card" style="margin-top:15px"><h3>Evaluación personal del proyecto</h3>
+      <p class="editable" data-edit><strong>Lo que mejor funcionó:</strong> [Describe una función o una parte del proceso que salió bien.]</p>
+      <p class="editable" data-edit><strong>La dificultad más importante:</strong> [Explica un problema real y cómo lo resolviste.]</p>
+      <p class="editable" data-edit><strong>Qué mejoraría en una próxima versión:</strong> [Añade mejoras técnicas, visuales o de experiencia de usuario.]</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><div><div class="eyebrow">07 · Cierre</div><h2>Reflexión final</h2></div></div>
+    <div class="card"><p class="editable" data-edit>El desarrollo de ChronosArena permite reunir conocimientos de programación con decisiones de diseño y reflexiones sobre la experiencia de juego. Más allá de conseguir que el programa funcione, el proceso implica planificar, resolver problemas, comprobar resultados y pensar en las personas que interactuarán con él. La valoración final debe completarse con los resultados reales del proyecto, las dificultades encontradas y los aprendizajes personales del autor o del equipo.</p></div>
+  </section>
+  <p class="small">Última actualización: <span id="updated">no guardada</span>. Los cambios se guardan en este navegador al pulsar “Guardar cambios”. Para conservarlos en otro dispositivo, exporta el contenido.</p>
+  <div class="actions no-print"><button class="btn primary" onclick="saveData()">Guardar cambios</button><button class="btn" onclick="resetEdit()">Salir de edición</button></div>
+</main>
+
+<div class="editor-panel no-print" id="editorPanel">
+<h3>Editor completo</h3>
+<p>Modo diseño permite seleccionar bloques, moverlos, eliminarlos, añadir contenido e insertar imágenes.</p>
+<div class="editor-tools">
+<button class="btn primary wide" onclick="toggleLayoutEdit()">Activar / salir del modo diseño</button>
+<button class="btn" onclick="addSection()">+ Sección</button><button class="btn" onclick="addCard()">+ Tarjeta</button>
+<button class="btn" onclick="moveSelected(-1)">↑ Mover arriba</button><button class="btn" onclick="moveSelected(1)">↓ Mover abajo</button>
+<button class="btn" onclick="deleteSelected()">Eliminar bloque</button><button class="btn" onclick="chooseImage()">Añadir / cambiar imagen</button>
+<button class="btn" onclick="openTheme()">Colores y estilo</button><button class="btn primary" onclick="saveData()">Guardar cambios</button>
+<button class="btn" onclick="exportData()">Exportar JSON</button><label class="btn" for="importFile">Importar JSON</label><button class="btn" onclick="window.print()">Imprimir / PDF</button>
+</div><p id="editorStatus">Selecciona “Activar modo diseño” para editar la estructura.</p>
+<input id="imageFile" type="file" accept="image/*" hidden onchange="handleImageUpload(event)">
+</div>
+<div id="themeDialog" class="editor-panel" style="left:14px;right:auto;display:none">
+<h3>Colores y estilo</h3><p>Personaliza el tema.</p>
+<label>Fondo <input type="color" id="themeBg" value="#0b1020"></label><br>
+<label>Paneles <input type="color" id="themePanel" value="#141c30"></label><br>
+<label>Texto <input type="color" id="themeInk" value="#eef3ff"></label><br>
+<label>Acento <input type="color" id="themeAccent" value="#79e0d0"></label><br><br>
+<button class="btn primary" onclick="applyTheme()">Aplicar</button><button class="btn" onclick="document.getElementById('themeDialog').style.display='none'">Cerrar</button>
+</div>
+
+<footer>ChronosArena · Portafolio digital editable · Proyecto académico</footer>
+<script>
+let editing=false,layoutEditing=false,selectedBlock=null,imageTarget=null;
+function toggleEdit(){editing=!editing;document.querySelectorAll('[data-edit],td[contenteditable]').forEach(e=>e.contentEditable=editing?'true':'false');}
+function resetEdit(){editing=false;document.querySelectorAll('[contenteditable="true"]').forEach(e=>e.contentEditable='false');}
+function markBlocks(){document.querySelectorAll('main > section,main > .hero,main > .notice,main .card,main .step,main .evidence,main .grid,main .two,main .timeline,main .evidence-grid').forEach((e,i)=>{e.dataset.block='1';e.dataset.blockLabel=e.querySelector('h1,h2,h3,strong')?.innerText?.trim()||('Bloque '+(i+1));});}
+function toggleLayoutEdit(){layoutEditing=!layoutEditing;document.body.classList.toggle('layout-edit',layoutEditing);markBlocks();document.getElementById('editorStatus').textContent=layoutEditing?'Haz clic en un bloque para seleccionarlo.':'Modo diseño desactivado.';if(!layoutEditing&&selectedBlock){selectedBlock.classList.remove('selected-block');selectedBlock=null;}}
+document.addEventListener('click',e=>{if(!layoutEditing||e.target.closest('.editor-panel')||e.target.closest('button')||e.target.closest('a'))return;let el=e.target.closest('[data-block]');if(!el)return;if(selectedBlock)selectedBlock.classList.remove('selected-block');selectedBlock=el;el.classList.add('selected-block');document.getElementById('editorStatus').textContent='Seleccionado: '+(el.dataset.blockLabel||'bloque');});
+function addSection(){let s=document.createElement('section');s.innerHTML='<div class="section-head"><div><div class="eyebrow" contenteditable="true">Nueva sección</div><h2 contenteditable="true">Título de la sección</h2><p contenteditable="true">Descripción</p></div></div><div class="card"><h3 contenteditable="true">Subtítulo</h3><p contenteditable="true">Contenido editable de la sección.</p></div>';document.querySelector('main').appendChild(s);markBlocks();document.getElementById('editorStatus').textContent='Sección añadida al final del portafolio.';}
+function addCard(){let target=selectedBlock?.closest('section')||document.querySelector('main section');let c=document.createElement('article');c.className='card';c.innerHTML='<h3 contenteditable="true">Nueva tarjeta</h3><p contenteditable="true">Edita esta descripción.</p>';let grid=target.querySelector('.grid,.two,.timeline,.evidence-grid');(grid||target).appendChild(c);markBlocks();document.getElementById('editorStatus').textContent='Tarjeta añadida.';}
+function moveSelected(d){if(!selectedBlock){alert('Activa el modo diseño y selecciona un bloque.');return;}let p=selectedBlock.parentElement;if(d<0&&selectedBlock.previousElementSibling)p.insertBefore(selectedBlock,selectedBlock.previousElementSibling);if(d>0&&selectedBlock.nextElementSibling)p.insertBefore(selectedBlock.nextElementSibling,selectedBlock);markBlocks();}
+function deleteSelected(){if(!selectedBlock){alert('Activa el modo diseño y selecciona un bloque.');return;}if(confirm('¿Eliminar el bloque seleccionado?')){selectedBlock.remove();selectedBlock=null;document.getElementById('editorStatus').textContent='Bloque eliminado. Guarda los cambios para conservarlo.';}}
+function chooseImage(){if(!selectedBlock){alert('Activa el modo diseño y selecciona un bloque.');return;}imageTarget=selectedBlock;document.getElementById('imageFile').click();}
+function handleImageUpload(e){let f=e.target.files[0];if(!f||!imageTarget)return;if(!f.type.startsWith('image/')){alert('Selecciona una imagen.');return;}let r=new FileReader();r.onload=()=>{let im=imageTarget.querySelector('img');if(!im){im=document.createElement('img');im.className='uploadable-image';im.alt='Imagen del portafolio';imageTarget.prepend(im);}im.src=r.result;im.alt=f.name;document.getElementById('editorStatus').textContent='Imagen insertada. Exporta JSON para conservarla fuera de este navegador.';};r.readAsDataURL(f);e.target.value='';}
+function openTheme(){let d=document.getElementById('themeDialog');d.style.display=d.style.display==='none'?'block':'none';}
+function applyTheme(){let s=document.documentElement.style;s.setProperty('--bg',themeBg.value);s.setProperty('--panel',themePanel.value);s.setProperty('--ink',themeInk.value);s.setProperty('--accent',themeAccent.value);document.getElementById('themeDialog').style.display='none';}
+function getData(){return {format:'ChronosArenaPortfolio',version:2,html:document.querySelector('main').innerHTML,theme:{bg:getComputedStyle(document.documentElement).getPropertyValue('--bg').trim(),panel:getComputedStyle(document.documentElement).getPropertyValue('--panel').trim(),ink:getComputedStyle(document.documentElement).getPropertyValue('--ink').trim(),accent:getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()},updated:new Date().toLocaleString('es-ES')};}
+function saveData(){try{localStorage.setItem('chronosArenaPortfolio',JSON.stringify(getData()));document.getElementById('updated').textContent=new Date().toLocaleString('es-ES');document.getElementById('editorStatus').textContent='Guardado en este navegador.';alert('Cambios guardados. Exporta JSON para llevarlos a otro dispositivo.');}catch(e){alert('No se pudo guardar; reduce el tamaño de las imágenes o exporta JSON.');}}
+function exportData(){let b=new Blob([JSON.stringify(getData(),null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='ChronosArena-portafolio.json';a.click();URL.revokeObjectURL(a.href);}
+function importData(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);if(!d.html)throw Error();if(!confirm('Esto reemplazará el contenido actual. ¿Continuar?'))return;document.querySelector('main').innerHTML=d.html;if(d.theme)Object.entries(d.theme).forEach(([k,v])=>{let m={bg:'--bg',panel:'--panel',ink:'--ink',accent:'--accent'}[k];if(m)document.documentElement.style.setProperty(m,v);});document.getElementById('updated').textContent=d.updated||'importado';markBlocks();alert('Portafolio importado. Pulsa Guardar cambios para conservarlo.');}catch(err){alert('JSON no válido. Usa un JSON exportado desde este portafolio que incluya el campo "html".');}};r.readAsText(f);e.target.value='';}
+function addRow(){const tr=document.createElement('tr');['Nueva fase','Nueva actividad','[Fecha]','[Estado]'].forEach(v=>{const td=document.createElement('td');td.contentEditable=editing?'true':'false';td.textContent=v;tr.appendChild(td)});document.querySelector('#schedule tbody').appendChild(tr);}
+try{let d=JSON.parse(localStorage.getItem('chronosArenaPortfolio')||'null');if(d?.html){document.querySelector('main').innerHTML=d.html;if(d.theme)Object.entries(d.theme).forEach(([k,v])=>{let m={bg:'--bg',panel:'--panel',ink:'--ink',accent:'--accent'}[k];if(m)document.documentElement.style.setProperty(m,v);});document.getElementById('updated').textContent=d.updated||'guardado';}}catch(e){}
+markBlocks();
+</script>
+</body>
+</html>
